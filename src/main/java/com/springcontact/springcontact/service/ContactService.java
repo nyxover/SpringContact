@@ -2,6 +2,7 @@ package com.springcontact.springcontact.service;
 
 
 import com.springcontact.springcontact.repository.entity.Contact;
+import com.springcontact.springcontact.repository.entity.ContactRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
