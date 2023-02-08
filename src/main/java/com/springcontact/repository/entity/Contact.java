@@ -1,4 +1,4 @@
-package com.springcontact.springcontact.repository.entity;
+package com.springcontact.repository.entity;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

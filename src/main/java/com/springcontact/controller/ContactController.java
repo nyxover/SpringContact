@@ -1,6 +1,7 @@
 package com.springcontact.springcontact.controller;
 
 import com.springcontact.springcontact.repository.entity.Contact;
+import com.springcontact.springcontact.service.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
