@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+  <title>Title</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+
+      <table>
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>first name</th>
+          <th>last name</th>
+          <th>email</th>
+          <th>phone</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="contact: ${contacts}">
+          <td th:text="${contact.first_name}"></td>
+          <td th:text="${contact.last_name}"></td>
+          <td th:text="${contact.email}"></td>
+          <td th:text="${contact.phone}"></td>
+        </tr>
+        </tbody>
+      </table>
+
+<!--      <form th:action="@{/search}" method="get">-->
+<!--        <input type="text" name="searchTerm">-->
+<!--        <input type="submit" value="Search">-->
+<!--      </form>-->
+
+
+<!--      <nav>-->
+<!--        <a th:href="@{/pastries/all}">Home</a>-->
+<!--        <a th:href="@{/pastries/add}">Add Pastry</a>-->
+
+<!--      </nav>-->
+
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
