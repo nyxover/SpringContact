@@ -1,4 +1,4 @@
-package com.springcontact.springcontact.repository.entity;
+package com.springcontact.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

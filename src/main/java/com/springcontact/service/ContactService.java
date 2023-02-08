@@ -1,8 +1,9 @@
-package com.springcontact.springcontact.service;
+package com.springcontact.service;
 
 
-import com.springcontact.springcontact.repository.entity.Contact;
-import com.springcontact.springcontact.repository.entity.ContactRepository;
+import com.springcontact.repository.entity.Contact;
+import com.springcontact.repository.ContactRepository;
+import com.springcontact.service.dto.ContactDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,14 +24,14 @@ public class ContactService {
         return contactRepository
                 .findAll()
                 .stream()
-                .map(contact -> ContactDto.fromEntity(contact))
+                .map(contact -> ContactDto.fromEntity(Contact))
                 .collect(Collectors.toList());
     }
 
     public Optional<ContactDto> fetchById(Long id){
         return contactRepository
                 .findById(id)
-                .map(contact -> ContactDto.fromEntity(contact));
+                .map(contact -> ContactDto.fromEntity((Contact));
     }
 
 }
