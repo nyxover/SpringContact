@@ -55,7 +55,7 @@ public class ContactController {
             return "add-contact";
         }
         contactService.addContact(contact);
-        return "redirect:/contact/all";
+        return "redirect:/contacts/all";
     }
 
 }
