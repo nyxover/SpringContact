@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -37,8 +38,25 @@ public class ContactService {
     }
 
     public void updateContact(Long id, Contact contact) {
+        Optional<Contact> optionalContact = contactRepository.findById(id);
+        if (optionalContact.isPresent()) {
+            Contact existingContact = optionalContact.get();
+            existingContact.setFirst_name(contact.getFirst_name());
+            existingContact.setLast_name(contact.getLast_name());
+            existingContact.setEmail(contact.getEmail());
+            existingContact.setPhone(contact.getPhone());
+            contactRepository.save(existingContact);
+        } else {
+            throw new ContactNotFoundException("Contact not found with id " + id);
+        }
     }
 
+    public class ContactNotFoundException extends NoSuchElementException {
+
+        public ContactNotFoundException(String message) {
+            super(message);
+        }
+    }
 
 }
 

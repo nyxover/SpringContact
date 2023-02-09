@@ -54,7 +54,7 @@ public class ContactController {
         Optional<ContactDto> contactOptional = contactService.fetchById(id);
         if (contactOptional.isPresent()) {
             model.addAttribute("contact", contactOptional.get());
-            return "edit-contact";
+            return "edit-contact.html";
         } else {
             return "404.html";
         }
