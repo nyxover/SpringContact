@@ -17,21 +17,23 @@ public class ContactService {
     private ContactRepository contactRepository;
 
     public void addContact(Contact contact){
-        ContactRepository.save(contact);
+        contactRepository.save(contact);
     }
 
-    public List<ContactDto> fetchcontacts(){
+
+
+    public List<ContactDto> fetchContacts(){
         return contactRepository
                 .findAll()
                 .stream()
-                .map(contact -> ContactDto.fromEntity(Contact))
+                .map(contact -> ContactDto.fromEntity(contact))
                 .collect(Collectors.toList());
     }
 
     public Optional<ContactDto> fetchById(Long id){
         return contactRepository
                 .findById(id)
-                .map(contact -> ContactDto.fromEntity((Contact));
+                .map(contact -> ContactDto.fromEntity(contact));
     }
 
 }

@@ -1,19 +1,22 @@
 package com.springcontact.controller;
 
-<<<<<<< HEAD
 import com.springcontact.repository.entity.Contact;
 import com.springcontact.service.ContactService;
-=======
-import com.springcontact.springcontact.repository.entity.Contact;
-import com.springcontact.springcontact.service.ContactService;
->>>>>>> ae8f483a56b582a24d9fa2f18c46f9b92d95f2f4
+import com.springcontact.service.dto.ContactDto;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+import java.util.Optional;
+@Controller
+@RequestMapping("/contacts")
 public class ContactController {
 
 
