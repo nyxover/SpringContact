@@ -24,10 +24,11 @@
         </thead>
         <tbody>
         <tr th:each="contact: ${contacts}">
-          <td th:text="${contact.first_name}"></td>
-          <td th:text="${contact.last_name}"></td>
-          <td th:text="${contact.email}"></td>
-          <td th:text="${contact.phone}"></td>
+          <td th:text="${contact.id()}"></td>
+          <td th:text="${contact.First_name()}"></td>
+         <td th:text="${contact.Last_name()}"></td>
+          <td th:text="${contact.Email()}"></td>
+          <td th:text="${contact.phone()}"></td>
         </tr>
         </tbody>
       </table>

@@ -28,7 +28,7 @@ public class ContactController {
     public String displayAllContacts(Model model) {
         List<ContactDto> contactList = contactService.fetchContacts();
         model.addAttribute("contacts", contactList);
-        return "home.html";
+        return "home";
     }
 
     @GetMapping("/{id}")
