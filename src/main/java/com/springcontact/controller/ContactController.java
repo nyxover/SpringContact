@@ -49,6 +49,26 @@ public class ContactController {
         return "add-contact";
     }
 
+    @GetMapping("/edit/{id}")
+    public String editContactForm(@PathVariable Long id, Model model) {
+        Optional<ContactDto> contactOptional = contactService.fetchById(id);
+        if (contactOptional.isPresent()) {
+            model.addAttribute("contact", contactOptional.get());
+            return "edit-contact";
+        } else {
+            return "404.html";
+        }
+    }
+
+    @PostMapping("/edit/{id}")
+    public String editContactFormSubmission(@PathVariable Long id, Contact contact, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "edit-contact";
+        }
+        contactService.updateContact(id, contact);
+        return "redirect:/contacts/all";
+    }
+
     @PostMapping("/add")
     public String addContactFormSubmission(Contact contact, BindingResult bindingResult) {
         if(bindingResult.hasErrors()) {

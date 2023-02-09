@@ -36,5 +36,9 @@ public class ContactService {
                 .map(contact -> ContactDto.fromEntity(contact));
     }
 
+    public void updateContact(Long id, Contact contact) {
+    }
+
+
 }
 

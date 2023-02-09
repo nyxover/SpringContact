@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
-  <title>Title</title>
+  <title>Contact</title>
   <meta charset="UTF-8">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
@@ -29,6 +29,7 @@
          <td th:text="${contact.Last_name()}"></td>
           <td th:text="${contact.Email()}"></td>
           <td th:text="${contact.phone()}"></td>
+            <td><a th:href="@{/contacts/edit(id=${contact.id()})}" class="btn btn-primary">Edit</a></td>
         </tr>
         </tbody>
       </table>
