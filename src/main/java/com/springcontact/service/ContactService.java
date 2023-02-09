@@ -51,6 +51,14 @@ public class ContactService {
         }
     }
 
+    public void deleteContact(Long id){
+        Optional<Contact> optionalContact = contactRepository.findById(id);
+        if (optionalContact.isPresent()) {
+            Contact existingContact = optionalContact.get();
+            contactRepository.delete(existingContact);
+        }
+    }
+
     public class ContactNotFoundException extends NoSuchElementException {
 
         public ContactNotFoundException(String message) {

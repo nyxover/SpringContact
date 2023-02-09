@@ -78,4 +78,10 @@ public class ContactController {
         return "redirect:/contacts/all";
     }
 
+    @GetMapping("/delete/{id}")
+    public String deleteContact(@PathVariable Long id) {
+        contactService.deleteContact(id);
+        return "redirect:/contacts/all";
+    }
+
 }
