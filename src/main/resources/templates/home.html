@@ -29,7 +29,7 @@
          <td th:text="${contact.Last_name()}"></td>
           <td th:text="${contact.Email()}"></td>
           <td th:text="${contact.phone()}"></td>
-            <td><a th:href="@{/contacts/edit(id=${contact.id()})}" class="btn btn-primary">Edit</a></td>
+            <td><a th:href="@{/contacts/edit/{id}(id=${contact.id})}" class="btn btn-primary">Edit</a></td>
         </tr>
         </tbody>
       </table>
