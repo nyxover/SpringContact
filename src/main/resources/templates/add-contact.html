@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Player</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+</head>
+<body>
+<form action="#" th:action="@{/contacts/add}" th:object="${contact}" method="post">
+
+  <div class="mb-3">
+    <label for="first_nameInput"> First_name</label>
+    <input id="first_nameInput" type="text" th:field="*{first_name}">
+  </div>
+
+  <div class="mb-3">
+    <label for="last_nameInput"> last_name</label>
+    <input id="last_nameInput" type="text" th:field="*{last_name}">
+  </div>
+
+  <div class="mb-3">
+    <label for="emailInput"> email</label>
+    <input id="emailInput" type="text" th:field="*{email}">
+  </div>
+
+  <div class="mb-3">
+    <label for="phoneInput"> phone</label>
+    <input id="phoneInput" type="text" th:field="*{phone}">
+  </div>
+
+  <div>
+  </div>
+
+
+  <div class="mb-3">
+    <input type="submit" value="Add">
+  </div>
+
+</form>
+</body>
+</html>
