@@ -2,15 +2,24 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
-  <title>Contact</title>
-  <meta charset="UTF-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
+    <title>Contact</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
 <div class="container">
-  <div class="row">
-    <div class="col-md-4">
+    <div class="row">
+        <div class="col-md-4">
+
+
+            <div th:if="${user != null}">
+                Welcome, <span th:text="${user.name}"></span>
+            </div>
+            <div th:if="${user == null}">
+                <a th:href="@{/login}">Connexion</a>
+                <a th:href="@{/register}">Inscription</a>
+            </div>
+
 
       <table>
         <thead>
