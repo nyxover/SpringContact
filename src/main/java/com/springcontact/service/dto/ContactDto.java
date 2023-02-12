@@ -12,6 +12,7 @@ public record ContactDto(Long id, String First_name, String Last_name, String Em
                 contact.getLast_name(),
                 contact.getEmail(),
                 contact.getPhone());
+
         return dto;
     }
 

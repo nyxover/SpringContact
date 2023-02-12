@@ -45,7 +45,9 @@ public class ContactController {
     @GetMapping ("/add")
     public String displayAddContactForm(Model model) {
         Contact contact = new Contact();
+        List<ContactDto> contacts = contactService.fetchContacts();
         model.addAttribute("contact", contact);
+        model.addAttribute("contacts", contacts);
         return "add-contact";
     }
 

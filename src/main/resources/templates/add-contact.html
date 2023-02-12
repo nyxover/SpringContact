@@ -30,8 +30,13 @@
     <input id="phoneInput" type="text" th:field="*{phone}">
   </div>
 
-  <div>
-  </div>
+<!--  <div class="mb-3">
+    <label for="existingContactInput"> Existing Contact</label>
+    <select id="existingContactInput">
+      &lt;!&ndash; Use thymeleaf to populate the options with existing contacts &ndash;&gt;
+      <option th:each="contact : ${contacts}" th:value="${contacts.id}" th:text="${contacts.first_name} ${contacts.last_name}"></option>
+    </select>
+  </div>-->
 
 
   <div class="mb-3">
